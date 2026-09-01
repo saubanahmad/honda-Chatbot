@@ -1,0 +1,169 @@
+/* ============================
+   App.css — Honda-themed layout
+   ============================ */
+
+.app {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(160deg, #f5f5f7 0%, #ebedf0 50%, #f5f5f7 100%);
+    padding: 20px;
+}
+
+/* ============================
+   ChatWindow — clean corporate card
+   ============================ */
+
+.chat-window {
+    width: 100%;
+    max-width: 720px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+}
+
+/* ============================
+   Chat Header — Honda Red bar
+   ============================ */
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    background: var(--honda-red);
+    color: white;
+}
+
+.chat-header h1 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: white;
+    letter-spacing: -0.01em;
+}
+
+.status-badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ============================
+   MessageList
+   ============================ */
+
+.message-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--bg-chat);
+}
+
+/* Scrollbar — subtle and clean */
+.message-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.message-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.message-list::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 3px;
+}
+
+.message-list::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* Empty state */
+.empty-state {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-muted);
+}
+
+.empty-state p:first-child {
+    font-size: 1.5rem;
+}
+
+.empty-hint {
+    font-size: 0.85rem;
+    color: #9ca3af;
+}
+
+/* ============================
+   MessageInput — bottom bar
+   ============================ */
+
+.message-input {
+    display: flex;
+    gap: 10px;
+    padding: 16px 20px;
+    border-top: 1px solid var(--border-color);
+    background: #ffffff;
+}
+
+.message-input input {
+    flex: 1;
+    padding: 12px 16px;
+    background: var(--bg-input);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.message-input input::placeholder {
+    color: #9ca3af;
+}
+
+.message-input input:focus {
+    border-color: var(--honda-red);
+    box-shadow: 0 0 0 3px rgba(204, 0, 0, 0.1);
+}
+
+.message-input button {
+    padding: 12px 24px;
+    background: var(--honda-red);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: background 0.2s ease, transform 0.1s ease, opacity 0.2s ease;
+}
+
+.message-input button:hover:not(:disabled) {
+    background: var(--honda-red-dark);
+    transform: translateY(-1px);
+}
+
+.message-input button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.message-input button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
