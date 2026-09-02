@@ -3,7 +3,7 @@ import MessageList from "./MessageList"
 import MessageInput from "./MessageInput"
 
 function ChatWindow() {
-    const { messages, input, handleInputChange, handleSubmit } = useChat()
+    const { messages, sendMessage } = useChat()
     return (
         <div className="chat-window">
             <div className="chat-header">
@@ -11,11 +11,7 @@ function ChatWindow() {
                 <span className="status-badge">Virtual Guide</span>
             </div>
             <MessageList messages={messages} />
-            <MessageInput
-                input={input}
-                handleInputChange={handleInputChange}
-                handleSubmit={handleSubmit}
-            />
+            <MessageInput onSend={sendMessage} />
         </div>
     )
 }

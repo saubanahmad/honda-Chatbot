@@ -13,10 +13,10 @@ app.use(express.json())
 app.post('/api/chat', async (req, res) => {
     const { messages } = req.body
     const result = streamText({
-        model: google('gemini-2.0-flash'),
+        model: google('gemini-3.6-flash'),
         messages: messages,
     })
-    result.toDataStreamResponse(res)
+    result.pipeUIMessageStreamToResponse(res)
 })
 
 app.listen(PORT, () => {
