@@ -1,22 +1,14 @@
-import { useState } from "react";
-function MessageInput({ onSend }) {
-    const [inputValue, setInputValue] = useState("")
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        if (!inputValue.trim()) return
-        onSend(inputValue.trim())
-        setInputValue("")
-    }
+function MessageInput({ input, handleInputChange, handleSubmit }) {
     return (
         <form className="message-input" onSubmit={handleSubmit}>
             <input
                 type="text"
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
+                value={input}
+                onChange={handleInputChange}
                 placeholder="Type your message..."
                 autoComplete="off"
             />
-            <button type="submit" disabled={!inputValue.trim()}>
+            <button type="submit" disabled={!input.trim()}>
                 Send
             </button>
         </form>

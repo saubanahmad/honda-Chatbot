@@ -1,17 +1,9 @@
-import { useState } from "react"
+import { useChat } from "@ai-sdk/react"
 import MessageList from "./MessageList"
 import MessageInput from "./MessageInput"
 
 function ChatWindow() {
-    const [messages, setMessages] = useState([])
-    const handleSendMessage = (text) => {
-        const userMessage = { role: 'user', content: text }
-        const aiMessage = {
-            role: "assistant",
-            content: `You said: "${text}". I'm Hobot — Honda Virtual Assistant, currently under production`
-        }
-        setMessages(prev => [...prev, userMessage, aiMessage])
-    }
+    const { messages, input, handleInputChange, handleSubmit } = useChat()
     return (
         <div className="chat-window">
             <div className="chat-header">
@@ -19,7 +11,11 @@ function ChatWindow() {
                 <span className="status-badge">Virtual Guide</span>
             </div>
             <MessageList messages={messages} />
-            <MessageInput onSend={handleSendMessage} />
+            <MessageInput
+                input={input}
+                handleInputChange={handleInputChange}
+                handleSubmit={handleSubmit}
+            />
         </div>
     )
 }
