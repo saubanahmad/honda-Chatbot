@@ -1,16 +1,47 @@
-# React + Vite
+# Honda AI Chatbot (Hobot)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A portfolio-grade AI chatbot built as a conceptual customer service assistant for the Honda Atlas Pakistan website. This project demonstrates full-stack AI integration, prompt engineering, and modern React development.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+"Hobot" is designed to act as the official corporate assistant for Honda Atlas Pakistan. It answers customer inquiries regarding cars, services, and corporate information while strictly maintaining a professional persona through advanced prompt engineering and system guardrails.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend:** React + Vite (Vanilla CSS, no Tailwind)
+- **Backend:** Node.js + Express
+- **AI Integration:** Vercel AI SDK v7
+- **LLM Provider:** Google Gemini API (`gemini-1.5-flash` / `gemini-3-flash-preview`)
+- **Future Integration:** Pinecone Vector Database for RAG (Retrieval-Augmented Generation)
 
-## Expanding the Oxlint configuration
+## Features (Current Progress)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- **Real-Time Streaming:** Responses stream in real-time chunk-by-chunk using the Vercel AI SDK `useChat` hook and `pipeUIMessageStreamToResponse`.
+- **Custom Design System:** Corporate UI adhering to Honda's brand guidelines (Honda Red `#CC0000`, clean whites, Inter font).
+- **Prompt Guardrails:** The bot is strictly constrained to only discuss automotive and Honda-related topics, politely refusing out-of-scope requests (like recipes or coding).
+
+## Local Setup
+
+1. **Clone the repository**
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Set up Environment Variables:**
+   Create a `.env` file in the root directory and add your Google Gemini API key:
+   ```env
+   GOOGLE_GENERATIVE_AI_API_KEY=your_api_key_here
+   ```
+4. **Run the Development Server:**
+   You will need to run the frontend and backend simultaneously.
+   
+   *Terminal 1 (Backend):*
+   ```bash
+   node server.js
+   ```
+   *Terminal 2 (Frontend):*
+   ```bash
+   npm run dev
+   ```
+
+*Disclaimer: This is a learning/portfolio project and is not officially affiliated with Honda Atlas Pakistan.*
