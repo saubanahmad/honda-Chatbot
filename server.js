@@ -2,10 +2,13 @@ import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
 import { google } from '@ai-sdk/google'
-import { streamText } from 'ai'
+import { streamText, embed } from 'ai'
+import { Pinecone } from '@pinecone-database/pinecone'
 
 const app = express()
 const PORT = 3001
+const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY })
+const index = pc.index('hobot-knowledge')
 
 app.use(cors())
 app.use(express.json())
@@ -27,6 +30,26 @@ function convertMessages(messages) {
 }
 app.post('/api/chat', async (req, res) => {
     const { messages } = req.body
+
+    const latestMessage = messages[messages.length - 1].content ||
+        messages[messages.length - 1].parts.
+            filter(p => p.type === 'text').map(p => p.text).join('')
+
+    const { embedding } = await embed({
+        model: google.textEmbeddingModel('gemini-embedding-2'),
+        value: latestMessage,
+    })
+
+    const searchResults = await index.query({
+        vector: embedding,
+        topK: 3,
+        includeMetadata: true,
+    })
+
+    const context = searchResults.matches.map(match => match.metadata.text).join('\n\n')
+
+
+
     const result = streamText({
         model: google('gemini-3-flash-preview'),
         system: `You are Hobot, the official customer service AI for Honda Atlas Pakistan.
@@ -36,7 +59,9 @@ app.post('/api/chat', async (req, res) => {
                 CRITICAL RULES:
                 1. You only answer questions related to Honda, cars, driving, or Honda Atlas Pakistan.
                 2. If a user asks a question completely unrelated to cars or Honda (like "how to bake a cake" or "write a python script"), you must politely refuse and steer the conversation back to Honda vehicles.
-                3. Keep your answers concise and easy to read.`,
+                3. Keep your answers concise and easy to read.
+                4. Base your answers on the following knowledge base context. If the context contains relevant information, use it. If not, use your general knowledge about Honda.
+                KNOWLEDGE BASE CONTEXT: ${context}`,
         messages: convertMessages(messages),
     })
     result.pipeUIMessageStreamToResponse(res)
