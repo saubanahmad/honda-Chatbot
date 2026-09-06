@@ -1,0 +1,212 @@
+[
+    {
+        "id": "price_honda_civic_standard",
+        "category": "Pricing",
+        "model": "Honda Civic",
+        "variant": "Standard",
+        "content": "The ex-factory starting price of the Honda Civic Standard variant in Pakistan is PKR 8,499,000."
+    },
+    {
+        "id": "price_honda_civic_oriel",
+        "category": "Pricing",
+        "model": "Honda Civic",
+        "variant": "Oriel",
+        "content": "The ex-factory starting price of the Honda Civic Oriel variant in Pakistan is PKR 8,834,000."
+    },
+    {
+        "id": "price_honda_civic_rs",
+        "category": "Pricing",
+        "model": "Honda Civic",
+        "variant": "RS",
+        "content": "The ex-factory starting price of the Honda Civic RS variant in Pakistan is PKR 10,100,000."
+    },
+    {
+        "id": "price_honda_hrv_vti",
+        "category": "Pricing",
+        "model": "Honda HR-V",
+        "variant": "VTI",
+        "content": "The ex-factory starting price of the Honda HR-V VTI variant in Pakistan is PKR 7,549,000."
+    },
+    {
+        "id": "price_honda_hrv_vti_s",
+        "category": "Pricing",
+        "model": "Honda HR-V",
+        "variant": "VTI-S",
+        "content": "The ex-factory starting price of the Honda HR-V VTI-S variant in Pakistan is PKR 7,799,000."
+    },
+    {
+        "id": "price_honda_hrv_ehev",
+        "category": "Pricing",
+        "model": "Honda HR-V",
+        "variant": "e:HEV",
+        "content": "The ex-factory starting price of the Honda HR-V e:HEV (Hybrid) variant in Pakistan is PKR 10,369,000."
+    },
+    {
+        "id": "price_honda_city_1_2ls",
+        "category": "Pricing",
+        "model": "Honda City",
+        "variant": "1.2LS",
+        "content": "The ex-factory starting price of the Honda City 1.2LS variant in Pakistan is PKR 4,737,000."
+    },
+    {
+        "id": "price_honda_city_aspire_1_5las",
+        "category": "Pricing",
+        "model": "Honda City",
+        "variant": "Aspire 1.5LAS",
+        "content": "The ex-factory starting price of the Honda City Aspire 1.5LAS variant in Pakistan is PKR 6,069,000."
+    },
+    {
+        "id": "price_honda_city_aspire_s_1_5las",
+        "category": "Pricing",
+        "model": "Honda City",
+        "variant": "Aspire S 1.5LAS CVT",
+        "content": "The ex-factory starting price of the Honda City Aspire S 1.5LAS CVT variant in Pakistan is PKR 6,149,000."
+    },
+    {
+        "id": "specs_civic_overview",
+        "category": "Specifications",
+        "model": "Honda Civic",
+        "variant": "All Variants",
+        "content": "All Honda Civic variants feature a 1.5L VTEC Turbo engine, a Continuously Variable Transmission (CVT), a seamless sunroof, and the standard Honda Sensing safety suite."
+    },
+    {
+        "id": "specs_civic_standard",
+        "category": "Specifications",
+        "model": "Honda Civic",
+        "variant": "Standard",
+        "content": "Specifications for the Honda Civic Standard: 1.5L VTEC Turbo engine generating 127 HP and 180 Nm of torque; ECON and Normal driving modes; 16-inch steel wheels; Halogen projector headlights; 7-inch touch screen infotainment; fabric seats; sunroof; and Honda Sensing safety suite."
+    },
+    {
+        "id": "specs_civic_oriel",
+        "category": "Specifications",
+        "model": "Honda Civic",
+        "variant": "Oriel",
+        "content": "Specifications for the Honda Civic Oriel: 1.5L VTEC Turbo engine generating 127 HP and 180 Nm of torque; ECON and Normal driving modes; 16-inch alloy wheels; Halogen projector headlights; 9-inch navigation infotainment display; Hi-Grade seats; sunroof; and Honda Sensing safety suite."
+    },
+    {
+        "id": "specs_civic_rs",
+        "category": "Specifications",
+        "model": "Honda Civic",
+        "variant": "RS",
+        "content": "Specifications for the Honda Civic RS (flagship): High-output 1.5L VTEC Turbo engine generating 176 HP and 220 Nm of torque; ECON, Normal, and Sport driving modes; 17-inch matte black alloy wheels; LED headlights; 9-inch navigation infotainment display; perforated leather seats; sunroof; and Honda Sensing safety suite."
+    },
+    {
+        "id": "specs_hrv_overview",
+        "category": "Specifications",
+        "model": "Honda HR-V",
+        "variant": "All Variants",
+        "content": "All Honda HR-V variants come standard with the Honda Sensing safety suite, an Electric Parking Brake with Auto Brake Hold, Hill Descent Control, and Hill Start Assist."
+    },
+    {
+        "id": "specs_hrv_vti",
+        "category": "Specifications",
+        "model": "Honda HR-V",
+        "variant": "VTI",
+        "content": "Specifications for the Honda HR-V VTI: 1.5L naturally aspirated petrol engine producing 119 HP; CVT automatic transmission; 17-inch grey alloy wheels; 9-inch touch screen infotainment system; fabric seats; 4 airbags; and standard safety features."
+    },
+    {
+        "id": "specs_hrv_vti_s",
+        "category": "Specifications",
+        "model": "Honda HR-V",
+        "variant": "VTI-S",
+        "content": "Specifications for the Honda HR-V VTI-S: 1.5L naturally aspirated petrol engine producing 119 HP; CVT automatic transmission; 17-inch black cut alloy wheels; 9-inch navigation system; leather seats; 4 airbags; and upgraded technology package."
+    },
+    {
+        "id": "specs_hrv_ehev",
+        "category": "Specifications",
+        "model": "Honda HR-V",
+        "variant": "e:HEV",
+        "content": "Specifications for the Honda HR-V e:HEV (Hybrid): 1.5L Hybrid powertrain producing 131 HP paired with an E-CVT transmission; 18-inch black cut alloy wheels; 9-inch navigation infotainment system; leather seats; 6 airbags; and an exclusive hands-free Power Tailgate."
+    },
+    {
+        "id": "specs_city_overview",
+        "category": "Specifications",
+        "model": "Honda City",
+        "variant": "All Variants",
+        "content": "All Honda City variants come equipped with Dual SRS Airbags, Anti-lock Braking System (ABS) with Electronic Brakeforce Distribution (EBD), and ISOFIX child seat anchor mounts."
+    },
+    {
+        "id": "specs_city_1_2ls",
+        "category": "Specifications",
+        "model": "Honda City",
+        "variant": "1.2LS",
+        "content": "Specifications for the Honda City 1.2LS: 1.2L petrol engine generating 88 HP; 15-inch steel wheels; Halogen headlights without fog lights; 7-inch touch screen infotainment system; fabric seats; and a micro-pole antenna."
+    },
+    {
+        "id": "specs_city_aspire_1_5las",
+        "category": "Specifications",
+        "model": "Honda City",
+        "variant": "Aspire 1.5LAS",
+        "content": "Specifications for the Honda City Aspire 1.5LAS: 1.5L engine generating 118 HP; 15-inch alloy wheels; Halogen headlights with bulb fog lights; 9-inch navigation display; Hi-Grade seats; Push Start button; and Automatic Climate Control (Auto AC)."
+    },
+    {
+        "id": "specs_city_aspire_s_1_5las",
+        "category": "Specifications",
+        "model": "Honda City",
+        "variant": "Aspire S 1.5LAS CVT",
+        "content": "Specifications for the Honda City Aspire S 1.5LAS CVT: 1.5L engine producing 118 HP with CVT transmission; 15-inch alloy wheels; Premium LED headlights; LED fog lights; 9-inch navigation display; Hi-Grade seats; Push Start; and Auto AC."
+    },
+    {
+        "id": "options_civic_standard",
+        "category": "Optional Features & Pricing",
+        "model": "Honda Civic",
+        "variant": "Standard",
+        "content": "Optional add-ons and feature prices for Honda Civic Standard: Hi-Grade Interior (Grey) for PKR 59,500; Exterior Color Canyon River Blue for PKR 25,000; Exterior Color Meteoroid Grey for PKR 25,000; Floor Mats for PKR 20,000; Door Visors for PKR 35,000; Trunk Tray for PKR 20,000; Reverse Camera for PKR 12,000; Front Under Spoiler for PKR 75,000; Rear Under Spoiler for PKR 90,000; Side Under Spoiler for PKR 115,000; 4th Year Warranty for PKR 25,000; 4th Year Extended Warranty for PKR 25,000; 5th Year Extended Warranty for PKR 25,000; 4th & 5th Year Extended Warranty bundle for PKR 50,000; Internet Package 10GB/Month for 1 Year for PKR 11,900."
+    },
+    {
+        "id": "options_civic_oriel",
+        "category": "Optional Features & Pricing",
+        "model": "Honda Civic",
+        "variant": "Oriel",
+        "content": "Optional add-ons and feature prices for Honda Civic Oriel: Hi-Grade Interior (Black/Tan/Burgundy) for PKR 30,000; Hi-Grade Interior (2 Tone Gray) for PKR 20,000; Exterior Color Canyon River Blue for PKR 25,000; Exterior Color Meteoroid Grey for PKR 25,000; Floor Mats for PKR 20,000; Door Visors for PKR 35,000; Trunk Tray for PKR 20,000; Front Under Spoiler for PKR 75,000; Rear Under Spoiler for PKR 90,000; Side Under Spoiler for PKR 115,000; Wireless Charger for PKR 55,000; 4th Year Warranty for PKR 25,000; 4th Year Extended Warranty for PKR 25,000; 5th Year Extended Warranty for PKR 25,000; 4th & 5th Year Extended Warranty bundle for PKR 50,000; Internet Package 10GB/Month for 1 Year for PKR 11,900."
+    },
+    {
+        "id": "options_civic_rs",
+        "category": "Optional Features & Pricing",
+        "model": "Honda Civic",
+        "variant": "RS",
+        "content": "Optional add-ons and feature prices for Honda Civic RS: Hi-Grade Interior (Burgundy / Perforated TAN) for PKR 30,000; Exterior Color Canyon River Blue for PKR 25,000; Exterior Color Meteoroid Grey for PKR 25,000; Floor Mats for PKR 20,000; Door Visors for PKR 35,000; Trunk Tray for PKR 20,000; Front Under Spoiler for PKR 75,000; Rear Under Spoiler for PKR 90,000; Side Under Spoiler for PKR 115,000; 4th Year Warranty for PKR 25,000; 4th Year Extended Warranty for PKR 25,000; 5th Year Extended Warranty for PKR 25,000; 4th & 5th Year Extended Warranty bundle for PKR 50,000; Internet Package 10GB/Month for 1 Year for PKR 11,900."
+    },
+    {
+        "id": "options_hrv_vti",
+        "category": "Optional Features & Pricing",
+        "model": "Honda HR-V",
+        "variant": "VTI",
+        "content": "Optional add-ons and feature prices for Honda HR-V VTI: Exterior Color Meteoroid Gray for PKR 25,000; Floor Mats for PKR 25,000; Door Visors for PKR 30,000; Front Under Spoiler for PKR 125,000; Rear Under Spoiler for PKR 85,000; Side Lower Garnish for PKR 100,000; 4th Year Extended Warranty for PKR 20,000; 4th & 5th Year Extended Warranty bundle for PKR 35,000; Internet Package 10GB/Month for 1 Year for PKR 11,900."
+    },
+    {
+        "id": "options_hrv_vti_s",
+        "category": "Optional Features & Pricing",
+        "model": "Honda HR-V",
+        "variant": "VTI-S",
+        "content": "Optional add-ons and feature prices for Honda HR-V VTI-S: Exterior Color Meteoroid Gray for PKR 25,000; 2 Tone Color (Ignite Red / Mist Blue) for PKR 40,000; 2 Tone Color (Meteoroid Grey) for PKR 50,000; Floor Mats for PKR 25,000; Door Visors for PKR 30,000; Cargo Tray for PKR 20,000; Front Under Spoiler for PKR 125,000; Rear Under Spoiler for PKR 85,000; Side Lower Garnish for PKR 100,000; Hi-Grade Interior (Black to Burgundy Hi-Grade) for PKR 30,000; 4th Year Extended Warranty for PKR 20,000; 4th & 5th Year Extended Warranty bundle for PKR 35,000; Internet Package 10GB/Month for 1 Year for PKR 11,900."
+    },
+    {
+        "id": "options_hrv_ehev",
+        "category": "Optional Features & Pricing",
+        "model": "Honda HR-V",
+        "variant": "e:HEV",
+        "content": "Optional add-ons and feature prices for Honda HR-V e:HEV (Hybrid): Exterior Color Meteoroid Grey for PKR 25,000; 2 Tone Color (Ignite Red / Mist Blue) for PKR 40,000; 2 Tone Color (Meteoroid Grey) for PKR 50,000; Floor Mats for PKR 25,000; Door Visors for PKR 30,000; Front Under Spoiler for PKR 125,000; Rear Under Spoiler for PKR 85,000; Side Lower Garnish for PKR 100,000; Bridgestone Tires upgrade for PKR 100,000; 4th Year Extended Warranty for PKR 30,000; 4th & 5th Year Extended Warranty bundle for PKR 50,000; 7th Year Battery Pack Extended Warranty for PKR 50,000; 7th & 8th Year Battery Pack Extended Warranty for PKR 80,000; Internet Package 10GB/Month for 1 Year for PKR 11,900."
+    },
+    {
+        "id": "options_city_1_2ls",
+        "category": "Optional Features & Pricing",
+        "model": "Honda City",
+        "variant": "1.2LS",
+        "content": "Optional add-ons and feature prices for Honda City 1.2LS: Rear Camera for PKR 12,000; Navigation System with Rear Cam for PKR 75,000; Front Fog Lights for PKR 18,000; Black Fabric Interior for PKR 20,000; Hi-Grade Interior for PKR 30,000; Hi-Grade Burgundy Interior for PKR 60,000 (or standalone PKR 30,000); Trunk Tray for PKR 12,500; Door Visors for PKR 8,000; Floor Mats for PKR 7,000; 2 Rear Speakers & 4 Tweeters upgrade for PKR 25,000; Extended Warranty (4th Year / 4 Years) for PKR 15,000; Internet Package 10GB/Month for 1 Year for PKR 11,900; Special Package for PKR 399,000; Special Package with Burgundy Interior for PKR 429,000."
+    },
+    {
+        "id": "options_city_aspire_1_5las",
+        "category": "Optional Features & Pricing",
+        "model": "Honda City",
+        "variant": "Aspire 1.5LAS",
+        "content": "Optional add-ons and feature prices for Honda City Aspire 1.5LAS: 4 Tweeters upgrade for PKR 15,000; Exterior Color Canyon River Blue for PKR 20,000; Exterior Color Meteoroid Gray for PKR 20,000; Hi-Grade Burgundy Interior for PKR 30,000; Floor Mats for PKR 7,000; Trunk Tray for PKR 12,500; Extended Warranty (4th Year) for PKR 15,000; Internet Package 10GB/Month for 1 Year for PKR 11,900."
+    },
+    {
+        "id": "options_city_aspire_s_1_5las",
+        "category": "Optional Features & Pricing",
+        "model": "Honda City",
+        "variant": "Aspire S 1.5LAS CVT",
+        "content": "Optional add-ons and feature prices for Honda City Aspire S 1.5LAS CVT: Exterior Color Canyon River Blue for PKR 20,000; Exterior Color Meteoroid Gray for PKR 20,000; Hi-Grade Burgundy Interior for PKR 30,000; Floor Mats for PKR 7,000; Trunk Tray for PKR 12,500; Extended Warranty (4th Year) for PKR 15,000; Internet Package 10GB/Month for 1 Year for PKR 11,900."
+    }
+]
