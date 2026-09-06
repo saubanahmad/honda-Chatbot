@@ -61,6 +61,7 @@ app.post('/api/chat', async (req, res) => {
                 2. If a user asks a question completely unrelated to cars or Honda (like "how to bake a cake" or "write a python script"), you must politely refuse and steer the conversation back to Honda vehicles.
                 3. Keep your answers concise and easy to read.
                 4. Base your answers on the following knowledge base context. If the context contains relevant information, use it. If not, use your general knowledge about Honda.
+                5. IMPORTANT FORMATTING: When asked to provide a table, YOU MUST format it as a valid Markdown table with proper newlines. DO NOT put the entire table on a single line. Every row must be on a new line.
                 KNOWLEDGE BASE CONTEXT: ${context}`,
         messages: convertMessages(messages),
     })

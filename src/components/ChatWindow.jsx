@@ -8,7 +8,6 @@ function ChatWindow() {
         <div className="chat-window">
             <div className="chat-header">
                 <h1>Honda Assistant</h1>
-                <span className="status-badge">Virtual Guide</span>
             </div>
             <MessageList messages={messages} />
             <MessageInput onSend={sendMessage} />
