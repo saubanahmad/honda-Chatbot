@@ -30,7 +30,7 @@
 <p align="center">
   <img src="docs/screenshots/chatbot-ui.png" alt="Chatbot UI — Empty State" width="700" />
   <br />
-  <em>Clean, corporate-themed interface with Honda branding</em>
+  <em>Clean interface with Honda branding</em>
 </p>
 
 <p align="center">
