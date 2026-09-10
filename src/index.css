@@ -7,9 +7,9 @@
 
 :root {
     /* Honda brand colors */
-    --honda-red: #CC0000;
-    --honda-red-dark: #A30000;
-    --honda-red-light: rgba(204, 0, 0, 0.08);
+    --honda-red: #852824;
+    --honda-red-dark: #6b1f1c;
+    --honda-red-light: rgba(133, 40, 36, 0.08);
 
     /* Backgrounds — clean white/gray like honda.com.pk */
     --bg-primary: #f5f5f7;
@@ -23,7 +23,7 @@
     --text-muted: #9ca3af;
 
     /* Message bubbles */
-    --user-bubble: #CC0000;
+    --user-bubble: #852824;
     --ai-bubble: #f3f4f6;
     --ai-bubble-border: #e5e7eb;
 

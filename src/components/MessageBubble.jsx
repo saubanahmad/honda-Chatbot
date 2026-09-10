@@ -14,7 +14,7 @@ function MessageBubble({ message }) {
 
     return (
         <div className={`message-bubble ${isUser ? "user" : "assistant"}`}>
-            <span className="message-role">{isUser ? "You" : "AI"}</span>
+            <span className="message-role">{isUser ? "You" : "Honda Assistant"}</span>
             <div className="message-content">
                 {isUser ? (
                     text

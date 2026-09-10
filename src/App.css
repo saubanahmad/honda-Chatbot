@@ -141,7 +141,7 @@
 
 .message-input input:focus {
     border-color: var(--honda-red);
-    box-shadow: 0 0 0 3px rgba(204, 0, 0, 0.1);
+    box-shadow: 0 0 0 3px rgba(133, 40, 36, 0.1);
 }
 
 .message-input button {
