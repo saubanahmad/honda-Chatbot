@@ -58,13 +58,17 @@ export default async function handler(req, res) {
 
         const searchResults = await index.query({
             vector: embedding,
-            topK: 3,
+            topK: 10,
             includeMetadata: true,
         })
+        
+        console.log('Pinecone Search Results:', JSON.stringify(searchResults, null, 2))
 
         const context = searchResults.matches
             .map(match => match.metadata.text)
             .join('\n\n')
+            
+        console.log('Generated Context:', context)
 
         const result = streamText({
             model: google('gemini-3-flash-preview'),
@@ -83,7 +87,7 @@ CRITICAL RULES:
 
 3. Keep your answers concise and easy to read.
 
-4. Base your answers on the following knowledge base context. If the context contains relevant information, use it. If not, use your general knowledge about Honda.
+4. You MUST base your answers STRICTLY on the following knowledge base context. Do not use outside knowledge. If the answer cannot be found in the context below, politely say you don't have that information.
 
 5. IMPORTANT FORMATTING: When asked to provide a table, YOU MUST format it as a valid Markdown table with proper newlines. DO NOT put the entire table on a single line. Every row must be on a new line.
 
