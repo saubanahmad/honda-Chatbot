@@ -61,14 +61,12 @@ export default async function handler(req, res) {
             topK: 10,
             includeMetadata: true,
         })
-        
-        console.log('Pinecone Search Results:', JSON.stringify(searchResults, null, 2))
+
 
         const context = searchResults.matches
             .map(match => match.metadata.text)
             .join('\n\n')
-            
-        console.log('Generated Context:', context)
+
 
         const result = streamText({
             model: google('gemini-3-flash-preview'),

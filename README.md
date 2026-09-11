@@ -17,6 +17,7 @@
   <img src="https://img.shields.io/badge/Gemini-AI-4285F4?logo=google&logoColor=white" alt="Gemini" />
   <img src="https://img.shields.io/badge/Pinecone-Vector_DB-00A98F?logo=pinecone&logoColor=white" alt="Pinecone" />
   <img src="https://img.shields.io/badge/Vercel_AI_SDK-7-000000?logo=vercel&logoColor=white" alt="Vercel AI SDK" />
+  <img src="https://img.shields.io/badge/Deployed_on-Vercel-000000?logo=vercel&logoColor=white" alt="Vercel" />
 </p>
 
 ---
@@ -43,30 +44,36 @@
 
 ## Architecture
 
+The chat handler (`api/chat.js`) is a single module shared between both environments:
+
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                          CLIENT (React + Vite)                      │
-│                                                                     │
-│   ┌──────────────┐   ┌──────────────┐   ┌────────────────────┐     │
-│   │  ChatWindow   │──▶│ MessageInput  │   │   MessageBubble    │     │
-│   │  (useChat)    │   │  (send msg)   │   │ (markdown render)  │     │
-│   └──────┬───────┘   └──────────────┘   └────────────────────┘     │
-│          │                                                          │
-│          │  POST /api/chat (streamed)                                │
-└──────────┼──────────────────────────────────────────────────────────┘
-           │
-           ▼
-┌──────────────────────────────────────────────────────────────────────┐
-│                      SERVER (Node.js + Express)                      │
-│                                                                      │
-│   1. Receive user message                                            │
-│   2. Generate embedding ─────────────▶ Google Gemini Embedding API   │
-│   3. Query vector DB ────────────────▶ Pinecone (top 3 matches)      │
-│   4. Build system prompt + context                                   │
-│   5. Stream LLM response ───────────▶ Gemini 3 Flash Preview        │
-│   6. Pipe stream to client                                           │
-└──────────────────────────────────────────────────────────────────────┘
+                    DEVELOPMENT                          PRODUCTION
+
+              React / Vite (5173)                   React on Vercel
+                     │                                     │
+                     │  POST /api/chat                     │  POST /api/chat
+                     ▼                                     ▼
+                Vite Proxy                          Vercel Serverless
+                     │                              Function (auto)
+                     ▼                                     │
+              Express :3001                                │
+                     │                                     │
+                     ▼                                     ▼
+               api/chat.js ◄──────── shared ────────► api/chat.js
+                     │                                     │
+                ┌────┴────┐                           ┌────┴────┐
+                │         │                           │         │
+           Gemini    Pinecone                    Gemini    Pinecone
 ```
+
+### Request Flow
+
+1. Receive user message
+2. Generate embedding → Google Gemini Embedding API (`gemini-embedding-2`)
+3. Query vector DB → Pinecone (top 10 semantic matches)
+4. Build system prompt with retrieved context
+5. Stream LLM response → Gemini 3 Flash Preview
+6. Pipe stream to client via Vercel AI SDK
 
 ---
 
@@ -82,6 +89,7 @@
 | **Error Handling** | User-friendly error messages with retry button; server-side try/catch with proper HTTP responses |
 | **Mobile Responsive** | Adaptive layout with a circular send icon button on small screens |
 | **Corporate Theme** | Clean, professional Honda-branded UI with custom color system |
+| **Vercel Deployment** | Production-ready serverless deployment — same handler runs locally and on Vercel |
 
 ---
 
@@ -91,7 +99,8 @@
 |---|---|---|
 | **Frontend** | React 19 + Vite 8 | UI framework and build tool |
 | **Styling** | Vanilla CSS | Custom design system — no CSS frameworks |
-| **Backend** | Node.js + Express 5 | API server |
+| **Backend (Local)** | Node.js + Express 5 | Local dev server wrapping the shared handler |
+| **Backend (Production)** | Vercel Serverless Functions | Auto-deployed from `api/` directory |
 | **AI SDK** | Vercel AI SDK v7 (`ai`, `@ai-sdk/react`, `@ai-sdk/google`) | Streaming, chat hooks, embeddings |
 | **LLM** | Google Gemini (`gemini-3-flash-preview`) | Language model for generating responses |
 | **Embeddings** | Google Gemini (`gemini-embedding-2`) | Text embeddings for semantic search |
@@ -104,6 +113,8 @@
 
 ```
 honda-Chatbot/
+├── api/
+│   └── chat.js              # Chat handler (shared: Express + Vercel)
 ├── public/
 │   └── favicon.svg          # Honda logo favicon
 ├── src/
@@ -119,7 +130,7 @@ honda-Chatbot/
 │   ├── App.css              # Layout, input bar, mobile responsive styles
 │   ├── index.css            # Global design tokens and resets
 │   └── main.jsx             # React entry point
-├── server.js                # Express API server (RAG + streaming)
+├── server.js                # Local Express wrapper (imports api/chat.js)
 ├── seed.js                  # Script to embed FAQs into Pinecone
 ├── faq.json                 # Honda FAQ knowledge base data
 ├── .env.example             # Environment variable template
@@ -178,7 +189,7 @@ You need **two terminals** running simultaneously:
 
 **Terminal 1 — Backend Server:**
 ```bash
-node server.js
+npm run server
 # Server running http://localhost:3001
 ```
 
@@ -192,10 +203,24 @@ Open **http://localhost:5173** in your browser.
 
 ---
 
+## Deployment (Vercel)
+
+This project is configured for zero-config deployment on Vercel.
+
+1. Connect your GitHub repository to [Vercel](https://vercel.com)
+2. Add environment variables in Vercel dashboard:
+   - `GOOGLE_GENERATIVE_AI_API_KEY`
+   - `PINECONE_API_KEY`
+3. Deploy — Vercel automatically picks up `api/chat.js` as a serverless function
+
+The frontend calls `/api/chat` using a relative path, so it works on both `localhost` (via Vite proxy) and production (via Vercel routing) without any configuration changes.
+
+---
+
 ## Environment Variables
 
-| Variable | Description | Required |
-|---|---|---|
+| Variable | Description |
+|---|---|
 | `GOOGLE_GENERATIVE_AI_API_KEY` | Google Gemini API key for LLM and embeddings |
 | `PINECONE_API_KEY` | Pinecone API key for vector database |
 
